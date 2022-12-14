@@ -1,0 +1,14 @@
+{
+  "name": "formulario-cadastro-users",
+  "version": "1.0.0",
+  "description": "Formulário destinado a cadastro de usuários",
+  "main": "javaScript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "João Vitor de Lira",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

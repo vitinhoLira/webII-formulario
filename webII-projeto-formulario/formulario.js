@@ -40,9 +40,15 @@ function mostrar() {
                 pExibe.removeChild(editarButton);
                 pExibe.removeChild(excluirButton);
 
+                aumentaAltura = (aumentaAltura - 83);
+
+                principal.style.height = aumentaAltura + "px";
+
             }
 
             escrevaAlgo.value = "Escreva algo";
+
+
 
         })
 
@@ -59,20 +65,20 @@ function mostrar() {
         pExibe.removeChild(excluirButton);
         aumentaAltura = (aumentaAltura - 83);
 
-        principal.style.height = aumentaAltura+"px";
+        principal.style.height = aumentaAltura + "px";
 
     }
     pExibe.appendChild(excluirButton);
     excluirButton.innerHTML = "Excluir";
 
-    
+
 
     var entrada = document.getElementById("texto");
     entrada.value = "";
 
     aumentaAltura = (aumentaAltura + 83);
 
-    principal.style.height = aumentaAltura+"px";
+    principal.style.height = aumentaAltura + "px";
 
 }
 
