@@ -1,0 +1,54 @@
+<head>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+        type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Cadastro.css">
+
+
+</head>
+
+
+<body class="cadastro-page">
+    <div class="main-block">
+        <form>
+            <h1>Filter data accounts from base</h1>
+
+            <fieldset>
+                <legend>
+                    <h3>Personal Details</h3>
+                </legend>
+                {{#each valor}}
+                <div>
+                    <div class="personal-details">
+                    <div>
+
+                        <div><input class="input-cad" type="text" name="matricula" placeholder="Matrícula"></div>
+                        <div> <input class="input-cad" type="text" name="username" placeholder="Username"></div>
+                        <div><input class="input-cad" type="text" name="name" placeholder="Nome"></div>
+                        <div><input class="input-cad" type="text" name="email" placeholder="Email"></div>
+                        <div><input class="input-cad" type="text" name="street" placeholder="Endereço"></div>
+                        <div><input class="input-cad" type="text" name="city" placeholder="Cidade"></div>
+                        <div><input class="input-cad" type="text" name="university" placeholder="Universidade"></div>
+                    </div>
+                    <div>
+                        <div>
+                            <label>Gender*</label>
+                            <div class="gender">
+                                <input class="input-cad" type="radio" value="male" id="male" name="gender" />
+                                <label for="male" class="radio">Masculine</label>
+                                <input class="input-cad" type="radio" value="female" id="female" name="gender" />
+                                <label for="female" class="radio">Feminine</label>
+                            </div>
+                        </div>
+                </div>
+
+                <a href='/editarDados/editado?id={{this.dataValues.id}}'>Atualizar</a><br>
+                <a href='/filtro/encontrado'>Cancelar</a><br>
+
+            </fieldset>
+            <button id="create" type="submit">Buscar</button>
+        </form>
+
+    </div>
+</body>

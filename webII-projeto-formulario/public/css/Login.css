@@ -1,0 +1,17 @@
+.Login-page {
+  background: #007bff;
+  background: linear-gradient(to right, #33AEFF, #b8d7ff);
+  }
+
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .btn-facebook {
+    color: white !important;
+    background-color: #e37f2d;
+  }
+
+  /* style login page */

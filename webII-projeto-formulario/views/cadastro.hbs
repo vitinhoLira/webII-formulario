@@ -1,0 +1,81 @@
+<head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+        type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Cadastro.css">
+
+
+</head>
+
+<body class="cadastro-page">
+    <div class="main-block">
+        <form action="/cadastro/cadastrado" method="post">
+            <h1>Create your account</h1>
+            <fieldset>
+                <legend>
+                    <h3>Account Details</h3>
+                </legend>
+                <div class="account-details">
+
+                    <div><label>Username*</label><input class="input-cad" type="text" name="username" required></div>
+                    <div><label>Password*</label><input class="input-cad" type="password" name="password" required>
+                    </div>
+                
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <h3>Personal Details</h3>
+                </legend>
+                <div class="personal-details">
+                    <div>
+                        <div><label>Matrícula*</label><input class="input-cad" type="text" name="matricula" required></div>
+                        <div><label>Name*</label><input class="input-cad" type="text" name="name" required></div>
+                        <div><label>Email</label><input class="input-cad" type="text" name="email"></div>
+                        <div><label>Phone*</label><input class="input-cad" type="text" name="phone" required></div>
+                        <div><label>Street</label><input class="input-cad" type="text" name="street"></div>
+                        <div><label>City*</label><input class="input-cad" type="text" name="city" required></div>
+                     
+                        <div><label>University</label><input class="input-cad" type="text" name="university"></div>
+                    </div>
+                    <div>
+                        <div>
+                            <label>Gender*</label>
+                            <div class="gender">
+                                <input class="input-cad" type="radio" value="masculino" id="male" name="gender" required />
+                                <label for="male" class="radio">Masculine</label>
+                                <input class="input-cad" type="radio" value="feminico" id="female" name="gender" required />
+                                <label for="female" class="radio">Feminine</label>
+                            </div>
+                        </div>
+                        <div class="birthdate">
+                            <label>Birthdate*</label>
+                            <div class="bdate-block">
+                            
+                                <input type="date" name="birthdate" required>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <h3>Terms and Mailing</h3>
+                </legend>
+                <div class="terms-mailing">
+                    <div class="checkbox">
+                        <input class="input-cad" type="checkbox" name="checkbox-term"><span>I accept the <a
+                                href="/README.pdf">Contract with the platform.</a></span>
+                    </div>
+                    <div class="checkbox">
+                        <input class="input-cad" type="checkbox" name="checkbox" ><span>I approve this CRUD on
+                            WEB II class</span>
+                    </div>
+            </fieldset>
+            <button id="create" type="submit" href="/">Create</button>
+        </form>
+
+    </div>
+</body>
