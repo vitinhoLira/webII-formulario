@@ -126,30 +126,78 @@ app.get('/filtro/encontrado', (req, res) => {
 
 	}).then(function (usuarios) {
 
-		// var exibir = "";
-		console.log(usuarios)
-
-		// for (var i = 0; i < usuarios.length; i++) {
-
-		// 	exibir += "<a><b>ID: </b>" + usuarios[i].id + "<br>";
-		// 	exibir += "<a><b>Matricula: </b>" + usuarios[i].matricula + "<br>";
-		// 	exibir += "<a><b>Login: </b>" + usuarios[i].username + "<br>";
-		// 	exibir += "<a><b>Nome: </b>" + usuarios[i].name + "<br>";
-		// 	exibir += "<a><b>Email: </b>" + usuarios[i].email + "<br>";
-		// 	exibir += "<a><b>Endereço: </b>" + usuarios[i].street + "<br>";
-		// 	exibir += "<a><b>Cidade: </b>" + usuarios[i].city + "<br>";
-		// 	exibir += "<a><b>Universidade: </b>" + usuarios[i].university + "<br>";
-		// 	exibir += "<a><b>Nascimento: </b>" + usuarios[i].birthdate + "<br>";
-		// 	exibir += "<a><b>Sexo: </b>" + usuarios[i].gender + "<br>";
-
-
-		// }
-
+		var  enviar = {user:usuarios}
 		
-		res.render('encontrados',{user:usuarios});
+		res.render('filtrar', enviar);
+		
+	}).catch(function(erro){
+		console.log("Erro na consulta: "+erro)
+		res.send("Ocorreu algum problema na consulta");
 	})
 
 });
+
+app.get('/atualizaUsuario', (req,res)=>{
+
+	var id = req.query.id;
+
+	Usuarios.findOne({
+		where:{
+			id:id
+		}
+	}).then(function(usuario){
+		
+		res.render('editar', {user:usuario})
+				
+	}).catch(function(erro){
+		console.log("Erro na consulta: "+erro)
+		res.send("Ocorreu algum problema na consulta");
+	})
+
+})
+
+app.post('/editou', urlEncodedParser,(req,res)=>{
+
+	var id = req.body.id;
+	var username = req.body.username;
+	var nome = req.body.name
+	var matricula = req.body.matricula;
+	var email = req.body.email;
+	var street = req.body.street;
+	var city = req.body.city;
+	var university = req.body.university;
+	var gender = req.body.gender;
+	var phone = req.body.phone;
+	var birthdate = req.body.birthdate;
+
+	const editarUser = { username: username, matricula: matricula, name: nome, email: email, phone: phone, street: street, city: city, university: university, gender: gender, birthdate: birthdate }
+
+	console.log('esse aqui:')
+	console.log(id)
+
+	Usuarios.update(editarUser, {
+
+		where:{
+
+			id:id
+
+		}
+
+	}).then(function(){
+
+		console.log('Cadastro atualizado com Sucesso!');
+
+		res.render('filtrar');
+
+
+	}).catch(function(erro){
+
+		console.log('Erro ao atualizar o Cadastro: '+erro);
+		res.send("Houve um problema ao atualizar o cadastro");
+
+	})
+
+})
 
 app.get('/deletaUsuario', (req,res)=>{
 	

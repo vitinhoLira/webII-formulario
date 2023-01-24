@@ -1,0 +1,74 @@
+<head>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+        type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Cadastro.css">
+
+</head>
+
+<body class="cadastro-page">
+    <div class="main-block">
+       
+        <form action="/editou" method="post">
+         <h1>Edit the register account</h1>
+            <fieldset>
+                <legend>
+                    <h3>Personal Details</h3>
+
+                </legend>
+                <div class="personal-details">
+                    <div>
+
+                        <b>ID:</b>
+                        <div><input class="input-cad" type="text" name="id"
+                                value="{{user.dataValues.id}}"></div>
+
+                        <b>Matrícula:</b>
+                        <div><input class="input-cad" type="text" name="matricula"
+                                value="{{user.dataValues.matricula}}"></div>
+                        <b>Username:</b>
+                        <div> <input class="input-cad" type="text" name="username" value="{{user.dataValues.username}}">
+                        </div>
+                        <b>Nome:</b>
+                        <div><input class="input-cad" type="text" name="name" value="{{user.dataValues.name}}"></div>
+                        
+                         <b>Gênero</b>
+                        <div>
+                           
+                            <input class="input-cad" value="{{user.dataValues.gender}}" list="browsers" name="browser" id="browser">
+                            
+                            <datalist id="browsers">
+                                <option value="Prefiro não mencionar">
+                                <option value="Masculino">
+                                <option value="Feminino">
+                                <option value="Não binário">
+                                <option value="Transexual">
+                            </datalist>
+
+                        </div>
+
+                        <b>Email:</b>
+                        <div><input class="input-cad" type="text" name="email" value="{{user.dataValues.email}}"></div>
+                        <b>Nascimento:</b>
+                        <div><input class="input-cad" type="date" name="birthdate"
+                                value="{{user.dataValues.birthdate}}"></div>
+                        <b>Telefone:</b>
+                        <div><input class="input-cad" type="text" name="phone" value="{{user.dataValues.phone}}"></div>
+                        <b>Endereço:</b>
+                        <div><input class="input-cad" type="text" name="street" value="{{user.dataValues.street}}">
+                        </div>
+                        <b>Cidade:</b>
+                        <div><input class="input-cad" type="text" name="city" value="{{user.dataValues.city}}"></div>
+                        <b>Universiade:</b>
+                        <div><input class="input-cad" type="text" name="university"
+                                value="{{user.dataValues.university}}"></div>
+
+                    </div>
+                    
+                </div>
+                <button type="submit">Ok</button>
+            </fieldset>
+        </form>
+    </div>
+</body>

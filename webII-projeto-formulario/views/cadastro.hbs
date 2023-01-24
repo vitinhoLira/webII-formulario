@@ -40,20 +40,29 @@
                         <div><label>University</label><input class="input-cad" type="text" name="university"></div>
                     </div>
                     <div>
-                        <div>
-                            <label>Gender*</label>
-                            <div class="gender">
-                                <input class="input-cad" type="radio" value="masculino" id="male" name="gender" required />
-                                <label for="male" class="radio">Masculine</label>
-                                <input class="input-cad" type="radio" value="feminico" id="female" name="gender" required />
-                                <label for="female" class="radio">Feminine</label>
-                            </div>
-                        </div>
+                       <div >
+
+
+                        <label for="gender">Gênero*</label>
+                        <select style="background-color: white;" name="gender" class="input-cad" required>
+                            
+                            <option disabled selected>Selecione uma opção</option>
+                            <option style="background-color: aliceblue;" value="Prefiro não mencionar">Prefiro não mencionar</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Não binário">Não binário</option>
+                            <option value="Transexual">Transexual</option>
+
+                        </select>
+
+                       </div>
+            
                         <div class="birthdate">
                             <label>Birthdate*</label>
-                            <div class="bdate-block">
+                            <div >
                             
                                 <input type="date" name="birthdate" required>
+
                             </div>
                         </div>
                        

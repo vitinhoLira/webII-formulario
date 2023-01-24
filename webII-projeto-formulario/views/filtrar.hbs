@@ -1,27 +1,26 @@
 <head>
 
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
         type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="../css/Cadastro.css">
 
-
 </head>
 
-
 <body class="cadastro-page">
+
     <div class="main-block">
-        <form action="/filtro/encontrado" method="get">
+        <form action="/filtro/encontrado" method="GET">
             <h1>Filter data accounts from base</h1>
-            
+
             <fieldset>
                 <legend>
                     <h3>Personal Details</h3>
                 </legend>
                 <div class="personal-details">
                     <div>
-                        
-                        <div><input class="input-cad" type="text" name="matricula" placeholder="Matrícula" ></div>
+
+                        <div><input class="input-cad" type="text" name="matricula" placeholder="Matrícula"></div>
                         <div> <input class="input-cad" type="text" name="username" placeholder="Username"></div>
                         <div><input class="input-cad" type="text" name="name" placeholder="Nome"></div>
                         <div><input class="input-cad" type="text" name="email" placeholder="Email"></div>
@@ -29,23 +28,62 @@
                         <div><input class="input-cad" type="text" name="city" placeholder="Cidade"></div>
                         <div><input class="input-cad" type="text" name="university" placeholder="Universidade"></div>
                     </div>
-                    <div>
-                        <div>
-                            <label>Gender*</label>
-                            <div class="gender">
-                                <input class="input-cad" type="radio" value="male" id="male" name="gender" />
-                                <label for="male" class="radio">Masculine</label>
-                                <input class="input-cad" type="radio" value="female" id="female" name="gender" />
-                                <label for="female" class="radio">Feminine</label>
-                            </div>
-                </div>
+                    <div >
+
+
+                        <label for="gender">Gênero*</label>
+                        <select style="background-color: white;" name="gender" class="input-cad" required>
                             
+                            <option disabled selected>Selecione uma opção</option>
+                            <option style="background-color: aliceblue;" value="Prefiro não mencionar">Prefiro não mencionar</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Não binário">Não binário</option>
+                            <option value="Transexual">Transexual</option>
+
+                        </select>
+
+                    </div>
+                </div>    
+                     
+
             </fieldset>
             <button id="create" type="submit">Buscar</button>
             <fieldset>
                 <legend>
                     <h3>Resultado da pesquisa</h3>
                 </legend>
+                {{#each user}}
+                <div>
+                    
+                    <label for="matricula"><b>Matricula</b>:</label> 
+                    <input id='matricula' style="background-color: white;" value='{{this.dataValues.matricula}}' disabled><br>
+                    <label for="username"><b>Username</b>:</label> 
+                    <input id="username" style="background-color: white;" value="{{this.dataValues.username}}" disabled><br>
+                    <label for="name"><b>Nome</b>:</label> 
+                    <input id="name" style="background-color: white;" value='{{this.dataValues.name}}' disabled><br>
+                    <label for="nascimento"><b>Nascimento</b>:</label> 
+                    <input type="datetime" id="nascimento" style="background-color: white;" value="{{this.dataValues.birthdate}}" disabled><br>
+                    <label for="gender"><b>Sexo</b>:</label> 
+                    <input id="gender" style="background-color: white;" value="{{this.dataValues.gender}}" disabled><br> 
+                    <label for="phone"><b>Telefone</b>:</label> 
+                    <input id="phone" style="background-color: white;" value="{{this.dataValues.phone}}" disabled><br>
+                    <label for="email"><b>Email</b>:</label>
+                    <input id="email" style="background-color: white;" value="{{this.dataValues.email}}" disabled><br>
+                    <label for="street"><b>Endereço</b>:</label>
+                    <input id="street" style="background-color: white;" value="{{this.dataValues.street}}" disabled><br>
+                    <label for="city"><b>Cidade</b>:</label>
+                     <input id="city" style="background-color: white;" value="{{this.dataValues.city}}" disabled><br>
+                    <label for="university"><b>Universiade</b>:</label> 
+                    <input id="university" style="background-color: white;" value="{{this.dataValues.university}}" disabled><br>
+                    
+                    <a style=" background-color: blue; color: rgb(255, 255, 255);" href='/atualizaUsuario?id={{this.dataValues.id}}'>Atualizar Cadastro</a><br>
+                    <a style=" background-color: blue; color: rgb(255, 255, 255);" href='/deletaUsuario?id={{this.dataValues.id}}'>Remover Cadastro</a><br>
+
+                </div>
+                <br>
+                {{/each}}
+
             </fieldset>
         </form>
 
